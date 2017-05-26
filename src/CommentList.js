@@ -8,13 +8,8 @@ class CommentList{
         this.comments.push(newComment)
     }
 
-    //change to reduce??
     render(){
-        let ul = `<ul>`
-        this.comments.map( function(comment){
-            ul += comment.render()
-        } )
-        debugger
-        return ul + `</ul>`
+        var elements = this.comments.map(function(com){ return com.render()})
+        return  `<ul>${elements.join('')}</ul>`
     }
 }
